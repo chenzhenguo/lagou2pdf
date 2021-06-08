@@ -46,7 +46,7 @@ const generaterPdf = require('./generaterPdf.js');
             };
             columnArticleUrlList.push(articleInfo);
             // 替换文章名称的 / 线， 解决路径被分割的问题
-            let useArticleTtle = columnArticle.theme.replace(/\//g, '-');
+            let useArticleTtle = columnArticle.theme.replace(/\//g, '-').replace(/\|/g, '-');
             //生成PDF 
             await generaterPdf(articleInfo,
                 useArticleTtle + '.pdf',
